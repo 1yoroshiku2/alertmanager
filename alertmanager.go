@@ -49,7 +49,7 @@ type Notification struct {
 	// } `json:alerts`
 }
 
-var defaultRobot = "https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=97c39010-0944-4082-8634-8abadaf383d2" //运维告警-正式告警
+var defaultRobot = "https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=xxx" //运维告警-正式告警
 
 // 告警接收人
 func SendMessage(notification Notification, defaultRobot string) {
@@ -63,7 +63,7 @@ func SendMessage(notification Notification, defaultRobot string) {
 		log.Println("notification.GroupLabels Marshal failed,", err)
 		return
 	}
-	//msg1, err := json.Marshal(notification.Alerts.Annotations["summary"])  //数组不能纸样直接赋值
+	//msg1, err := json.Marshal(notification.Alerts.Annotations["summary"])  //数组不能这样直接赋值
 	// //msg1, err := json.Marshal(notification.CommonAnnotations["summary"])
 	// if err != nil {
 	// 	log.Println("notification.CommonAnnotations Marshal failed,", err)
